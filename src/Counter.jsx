@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const Counter = () => {
-    const [count, setCount] = useState(0);
-    const handelAdd = () => {
-        const newCount = count + 1;
-        setCount(newCount);
+    const [num, setNum] = useState(0);
+    
+    const addNumber = () => {
+        const newNumber = num + 1;
+        return setNum(newNumber);
     }
-    const handelMinuse = () => {
-        const newCount = count - 1;
-        setCount(newCount);
+    const reduseNumber = () => {
+        const newNumber = num - 1;
+        return setNum(newNumber);
+    }
+    const reSetNumber = () => {
+        setNum(0);
     }
     return (
         <div>
-            <h1>{count}</h1>
-            <button onClick={handelMinuse}>-</button>
-            <button onClick={handelAdd}>+</button>
+            <h1>{num}</h1>
+            <button onClick={reduseNumber}> Reduse </button>
+            <button className="px-3" onClick={reSetNumber}> Reset </button>
+            <button onClick={addNumber}> Add </button>
         </div>
     );
 };
